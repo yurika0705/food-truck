@@ -16,3 +16,14 @@
  * {
   box-sizing: border-box;
 }
+
+.toast {
+margin: 0 30px;
+}
+.toast .notice {
+  color: darkseagreen;
+}
+
+.toast .alert {
+color: darkred;
+}
