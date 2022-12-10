@@ -10,4 +10,17 @@
 
 .form {
   margin: 100px 300px;
+  border: solid 1px;
+  border-color: darkgray;
+  border-radius: 5px;
+  padding: 30px 50px;
+}
+
+.form h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 3px;
 }
