@@ -24,7 +24,7 @@
 | contact_address    | string     | null: false                    |
 | fee                | string     |                                |
 | info               | text       |                                |
-| image              | string     |                                |
+| image              | text       |                                |
 | user               | references | null: false, foreign_key: true |
 | comment            | references | foreign_key: true              |
 
