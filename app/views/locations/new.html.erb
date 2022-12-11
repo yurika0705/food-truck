@@ -1,4 +1,3 @@
-<h1>出店場所 新規投稿</h1>
 <%= form_with model: @location, method: :post, local: true do |form| %>
     <%# 場所の画像 %>
     <%# <div class="img-upload">
@@ -15,6 +14,7 @@
     </div> %>
   <%# 場所の名前 %>
   <div class="new-location">
+  <h1 class="form-title">出店場所 新規投稿</h1>
     <div class="weight-bold-text">
       場所名
       <span class="indispensable">*必須</span>
@@ -43,6 +43,6 @@
     </div>
     <%= form.text_field :info, class:"location-info", placeholder:"(例) 客層,ピークの時間帯,気を付けることなど", maxlength:"50" %>
     <%# 登録ボタン %>
-    <%= form.submit '登録する' %>
+    <%= form.submit '登録する', class: "button" %>
   </div>
 <% end %>
