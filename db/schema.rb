@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20220221210085231) do
     t.string "contact_address", null: false
     t.string "fee"
     t.text "info"
-    t.text "image"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

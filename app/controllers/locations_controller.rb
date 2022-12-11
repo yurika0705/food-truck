@@ -12,6 +12,7 @@ class LocationsController < ApplicationController
     @location = Location.new(location_params)
     if @location.valid?
       @location.save
+      binding.pry
       redirect_to root_path
     else
       render :new

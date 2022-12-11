@@ -136,7 +136,7 @@ footer .pr {
 .location-lists {
 	display: flex;
 	flex-flow: column wrap;
-	height: 250px;
+	height: 400px;
 	padding: 0px 20px;	/*上下、左右へのブロック内の余白*/
 	margin-bottom: 20px;	/*ブロックの下(外側)に空ける余白*/
 }

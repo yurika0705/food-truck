@@ -6,7 +6,6 @@ class CreateLocations < ActiveRecord::Migration[6.0]
       t.string :contact_address,           null: false
       t.string :fee
       t.text :info
-      t.text :image
       t.references :user,                  null: false, foreign_key: true
 
       t.timestamps
