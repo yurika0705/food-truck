@@ -20,7 +20,7 @@ class LocationsController < ApplicationController
 
 private
   def location_params
-    params.require(:location).permit(:place, :address, :contact_address, :fee, :info).merge(user_id: current_user.id)
+    params.require(:location).permit(:place, :address, :contact_address, :fee, :info, :image).merge(user_id: current_user.id)
   end
 
   def move_to_index
