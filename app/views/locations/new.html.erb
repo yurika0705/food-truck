@@ -1,48 +1,47 @@
-<%= form_with model: @location, method: :post, local: true do |form| %>
+<%= form_with model: @location, method: :post, local: true do |f| %>
+  <div class="new-location">
+  <h1 class="form-title">出店場所 新規投稿</h1>
     <%# 場所の画像 %>
-    <%# <div class="img-upload">
+    <div class="img-upload">
       <div class="weight-bold-text">
-        商品画像
-        <span class="indispensable">必須</span>
+        場所の画像
       </div>
       <div class="click-upload">
         <p>
           クリックしてファイルをアップロード
         </p>
         <%= f.file_field :image, id:"item_image" %>
-      <%#</div>
-    </div> %>
-  <%# 場所の名前 %>
-  <div class="new-location">
-  <h1 class="form-title">出店場所 新規投稿</h1>
+      </div>
+    </div>
+    <%# 場所の名前 %>
     <div class="weight-bold-text">
       場所名
       <span class="indispensable">*必須</span>
     </div>
-    <%= form.text_field :place, class:"location-place", placeholder:"(例) PayPayドーム前", maxlength:"30" %>
+    <%= f.text_field :place, class:"location-place", placeholder:"(例) PayPayドーム前", maxlength:"30" %>
     <%# 住所 %>
     <div class="weight-bold-text">
       住所
       <span class="indispensable">*必須</span>
     </div>
-    <%= form.text_field :address, class:"location-address", placeholder:"(例) 福岡市中央区地行浜２丁目２−２", maxlength:"50" %>
+    <%= f.text_field :address, class:"location-address", placeholder:"(例) 福岡市中央区地行浜２丁目２−２", maxlength:"50" %>
     <%# 連絡先 %>
     <div class="weight-bold-text">
       連絡先
       <span class="indispensable">*必須</span>
     </div>
-    <%= form.text_field :contact_address, class:"location-contact-address", placeholder:"*必須 (例) 012-1234-1234", maxlength:"11" %>
+    <%= f.text_field :contact_address, class:"location-contact-address", placeholder:"*必須 (例) 012-1234-1234", maxlength:"11" %>
     <%# 出店料 %>
     <div class="weight-bold-text">
       出店料
     </div>
-    <%= form.text_field :fee, class:"location-fee", placeholder:"(例) 一律500円,売上の15%など", maxlength:"30" %>
+    <%= f.text_field :fee, class:"location-fee", placeholder:"(例) 一律500円,売上の15%など", maxlength:"30" %>
     <%# その他情報 %>
     <div class="weight-bold-text">
       その他情報
     </div>
-    <%= form.text_field :info, class:"location-info", placeholder:"(例) 客層,ピークの時間帯,気を付けることなど", maxlength:"50" %>
+    <%= f.text_field :info, class:"location-info", placeholder:"(例) 客層,ピークの時間帯,気を付けることなど", maxlength:"50" %>
     <%# 登録ボタン %>
-    <%= form.submit '登録する', class: "button" %>
+    <%= f.submit '登録する', class: "button" %>
   </div>
 <% end %>

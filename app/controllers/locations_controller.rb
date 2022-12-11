@@ -12,6 +12,7 @@ class LocationsController < ApplicationController
     @location = Location.new(location_params)
     if @location.valid?
       @location.save
+      binding.pry
       redirect_to root_path
     else
       render :new
@@ -20,7 +21,7 @@ class LocationsController < ApplicationController
 
 private
   def location_params
-    params.require(:location).permit(:place, :address, :contact_address, :fee, :info).merge(user_id: current_user.id)
+    params.require(:location).permit(:place, :address, :contact_address, :fee, :info, :image).merge(user_id: current_user.id)
   end
 
   def move_to_index
