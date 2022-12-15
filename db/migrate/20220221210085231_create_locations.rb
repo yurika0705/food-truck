@@ -8,9 +8,9 @@ class CreateLocations < ActiveRecord::Migration[6.0]
       t.text       :info
       t.references :user,                  null: false, foreign_key: true
       t.integer    :prefecture_id,         null: false
-      t.timestamps
       t.float      :latitude
       t.float      :longitude
+      t.timestamps
     end
   end
 end

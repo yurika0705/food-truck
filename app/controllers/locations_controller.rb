@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_location, only: [:edit, :show, :update]
+  before_action :set_location, only: [:edit, :show, :update, :destroy]
   before_action :my_location, only: [:edit, :destroy]
 
   def index
@@ -39,6 +39,11 @@ class LocationsController < ApplicationController
     else
       redirect_to :edit
     end
+  end
+  
+  def destroy
+    @location.destroy
+    redirect_to root_path
   end
 
 private

@@ -12,9 +12,8 @@ class Location < ApplicationRecord
   end
   # prefectureの選択が「---」の時は保存できないようにする
   validates :prefecture_id, numericality: { other_then: 1 , message: "can't be blank" }
-
   # addressから自動で緯度と経度のカラムに値を代入する
   geocoded_by :address
-  after_validation :geocode, if: :address_changed?
+  after_validation :geocode
 
 end
