@@ -1,6 +1,6 @@
-<%= form_with model: @location, method: :post, local: true do |f| %>
+<%= form_with model: @location, method: :patch, local: true do |f| %>
   <div class="new-location">
-  <h1 class="form-title">出店場所 新規投稿</h1>
+  <h1 class="form-title">出店場所 編集</h1>
     <%# 場所の画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
@@ -44,6 +44,6 @@
     </div>
     <%= f.text_area :info, class:"location-info", placeholder:"(例) 客層,ピーク時間帯,注意事項", maxlength:"100" %>
     <%# 登録ボタン %>
-    <%= f.submit '登録する', class: "button" %>
+    <%= f.submit '変更する', class: "button" %>
   </div>
 <% end %>
