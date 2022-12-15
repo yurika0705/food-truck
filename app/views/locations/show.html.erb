@@ -20,6 +20,12 @@
         </ul>
     </div>
   </div>
+
+
+  <%# カレンダー表示 %>
+  <%= link_to 'カレンダー表示', calenders_path, method: :get %>
+
+
   <%# JavaScriptでGoogleMapを表示する %>
   <!-- 住所表示エリア -->
   <p class="this-address"><%= @location.address %></p>

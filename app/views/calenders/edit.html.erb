@@ -1,0 +1,19 @@
+<%= form_with(model: @calender, local: true) do |form| %>
+
+  <div class="store-name">
+    <div class="form-tag">キッチンカー名</div>
+    <%= form.text_field :store_name %>
+  </div>
+
+
+    <div class="time">
+    <div class="form-tag">時間</div>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+
+<% end %>
