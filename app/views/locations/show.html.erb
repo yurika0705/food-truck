@@ -1,0 +1,61 @@
+<div class="contents-row">
+    <div class="more">
+     <%= image_tag @location.image.variant(resize: '500x500'), class: 'location-image' if @location.image.attached? %>
+      <ul class="more_list">
+        <li>
+          <%= link_to '編集', edit_location_path(@location.id), method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', location_path(@location.id), method: :delete %>
+        </li>
+      </ul>
+    </div>
+    <div class="location-show">
+      <div class="place"><%= @location.place %></div>
+        <ul class="show-lists">
+          <li>住所・・・・・・<%= @location.address %></li>
+          <li>連絡先・・・・・<%= @location.contact_address %></li>
+          <li>出店料・・・・・<%= @location.fee %></li>
+          <li>その他情報・・・<%= @location.info %></li>
+        </ul>
+    </div>
+  </div>
+  <%# JavaScriptでGoogleMapを表示する %>
+  <!-- 住所表示エリア -->
+  <h5>住所</h5>
+  <p><%= @location.address %></p>
+
+  <!-- Googleマップ表示エリア(地図を表示) -->
+  <div id="map"></div>
+
+  <!-- Googleマップ表示用の Javascript -->
+  <script>
+    function initMap(){
+      // 地図の位置情報(緯度・経度)を取得
+      let mapPosition = {lat: <%= @location.latitude || 0 %> , lng: <%= @location.longitude || 0 %> };
+      let map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: mapPosition
+      });
+      let transitLayer = new google.maps.TransitLayer();
+      transitLayer.setMap(map);
+
+      let contentString = '【住所】<%= @location.address %>';
+      let infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+
+      let marker = new google.maps.Marker({
+        position: mapPosition,
+        map: map,
+        title: contentString
+      });
+
+      marker.addListener('click', function(){
+        infowindow.open(map, marker);
+      });
+    }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
+</div>

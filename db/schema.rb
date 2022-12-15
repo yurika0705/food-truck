@@ -40,6 +40,9 @@ ActiveRecord::Schema.define(version: 20220221210085231) do
     t.string "fee"
     t.text "info"
     t.bigint "user_id", null: false
+    t.integer "prefecture_id", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_locations_on_user_id"
