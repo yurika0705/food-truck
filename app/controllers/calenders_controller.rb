@@ -1,5 +1,5 @@
 class CalendersController < ApplicationController
-  before_action :set_location
+
   def index
     @calenders = Calender.all
     @calender = Calender.new
@@ -42,9 +42,4 @@ class CalendersController < ApplicationController
   def calender_parameter
     params.require(:calender).permit(:store_name, :start_time)
   end
-
-  def set_location
-    @location = Location.find(params[:id])
-  end
-
 end
