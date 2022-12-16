@@ -15,7 +15,7 @@ class CalendersController < ApplicationController
 
   def create
     Calender.create(calender_parameter)
-    redirect_to carenders_path
+    redirect_to calenders_path
   end
 
   def destroy
