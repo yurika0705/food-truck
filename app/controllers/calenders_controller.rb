@@ -1,8 +1,10 @@
 class CalendersController < ApplicationController
+  before_action :set_calender, only: [:edit, :show, :update, :destroy]
 
   def index
     @calenders = Calender.all
     @calender = Calender.new
+    @locations = Calender.all
   end
   
   def new
@@ -14,8 +16,12 @@ class CalendersController < ApplicationController
   end
 
   def create
-    Calender.create(calender_parameter)
-    redirect_to calenders_path
+    @calender = Calender.new(calender_params)
+    if @calender.valid?
+      @calender.save
+    else
+      redirect_to location_calenders_path
+    end
   end
 
   def destroy
@@ -39,7 +45,11 @@ class CalendersController < ApplicationController
 
   private
 
-  def calender_parameter
-    params.require(:calender).permit(:store_name, :start_time)
+  def calender_params
+    params.require(:calender).permit(:start_time, :store_name).merge(user_id: current_user.id, location_id: params[:location_id])
+  end
+
+  def set_calender
+    @calender = Calender.find(params[:id])
   end
 end

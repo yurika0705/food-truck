@@ -16,19 +16,7 @@
       </tr>
     </thead>
 
-    <tbody>
-      <% @calenders.each do |calender| %>
-        <tr>
-          <td><%= link_to calender.store_name , calender %></td>
-          <td><%= calender.start_time.strftime("%m-%d") %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-
-
-  <%= form_with(model: @calender, local: true) do |form| %>
+  <%= form_with(model: @calenders, url: location_calenders_path(:location_id), local: true) do |form| %>
 
     <div class="store-name">
       <div class="form-tag">キッチンカー名</div>
@@ -56,7 +44,7 @@
 
     <% calenders.each do |calender| %>
       <div>
-        <%= link_to calender.store_name, calender %>
+        <%= link_to calender.store_name, location_calenders_path(:location_id) %>
       </div>
     <% end %>
   <% end %>

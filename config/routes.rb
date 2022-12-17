@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root to: 'locations#index'
   
   get '/locations/prefecture/:id', to: "location#prefecture"
-  resources :users, only: [:edit, :update]
-  resources :locations
-  resources :calenders
+  resources :users
+  resources :locations do
+    resources :calenders
+  end
 end

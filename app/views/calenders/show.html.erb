@@ -2,12 +2,12 @@
 <div class="show">
 <p>
   <strong>キッチンカー名</strong>
-  <%= @calender.store_name %>
+  <%= [@location, @calender].store_name %>
 </p>
 
 <p>
   <strong>日時</strong>
-  <%= @calender.start_time.strftime("%m-%d") %>
+  <%= [@location, @calender].start_time.strftime("%m-%d") %>
 </p>
 
 <%= link_to '編集', edit_calender_path(@calender.id) %>

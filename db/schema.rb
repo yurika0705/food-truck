@@ -34,10 +34,14 @@ ActiveRecord::Schema.define(version: 20220221210085231) do
   end
 
   create_table "calenders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "store_name"
-    t.datetime "start_time"
+    t.bigint "location_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "start_time", null: false
+    t.string "store_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["location_id"], name: "index_calenders_on_location_id"
+    t.index ["user_id"], name: "index_calenders_on_user_id"
   end
 
   create_table "locations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -69,5 +73,7 @@ ActiveRecord::Schema.define(version: 20220221210085231) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "calenders", "locations"
+  add_foreign_key "calenders", "users"
   add_foreign_key "locations", "users"
 end

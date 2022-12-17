@@ -23,7 +23,7 @@
 
 
   <%# カレンダー表示 %>
-  <%= link_to 'カレンダー表示', calenders_path, method: :get %>
+  <%= link_to 'カレンダー表示', location_calenders_path(@location.id), method: :get %>
 
 
   <%# JavaScriptでGoogleMapを表示する %>
