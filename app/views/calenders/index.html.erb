@@ -1,4 +1,3 @@
-
   <p id="notice"><%= notice %></p>
 
   <div class="toppage">
@@ -7,7 +6,7 @@
 
   <div class="row">
   <div class="col-md-4">
-    <div class="schedule">出店状況一覧</div>
+    <div class="schedule">空き状況</div>
   <table class="table">
     <thead class="thead-light">
       <tr>
@@ -16,9 +15,21 @@
       </tr>
     </thead>
 
-  <%= form_with(model: @calenders, url: location_calenders_path(:location_id), local: true) do |form| %>
+    <tbody>
+      <% @calenders.each do |calender| %>
+        <tr>
+          <td><%= link_to calender.store_name, location_calenders_path(:location_id) %></td>
+          <td><%= calender.start_time.strftime("%m-%d") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-    <div class="store-name">
+
+
+  <%= form_with(model: @calender, url: location_calenders_path(:location_id), local: true) do |form| %>
+
+    <div class="title">
       <div class="form-tag">キッチンカー名</div>
       <%= form.text_field :store_name %>
     </div>
@@ -28,9 +39,9 @@
       <%= form.datetime_select :start_time %>
     </div>
 
-    <div class="submit">
+  <div class="submit">
       <%= form.submit %>
-    </div>
+  </div>
   <% end %>
   </div>
 
