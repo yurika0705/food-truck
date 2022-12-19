@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class CalendersControllerTest < ActionDispatch::IntegrationTest
+class EventsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get calenders_index_url
+    get events_index_url
     assert_response :success
   end
 

@@ -23,8 +23,14 @@
 
 
   <%# カレンダー表示 %>
-  <%= link_to 'カレンダー表示', location_calenders_path(@location.id), method: :get %>
-
+  <h1>Schedule</h1>
+  <%= month_calendar events: @calendars do |date, calendars| %>
+    <%= date.day %>
+      <% calendars.each do |calendar| %><br />
+        <%= calendar.start_time.strftime('%H:%M') %> 
+        <%= link_to calendar.store_name,calendar_path(calendar) %>
+      <% end %>
+  <% end %>
 
   <%# JavaScriptでGoogleMapを表示する %>
   <!-- 住所表示エリア -->
