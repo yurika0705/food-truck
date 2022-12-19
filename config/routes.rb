@@ -4,9 +4,8 @@ Rails.application.routes.draw do
 
   get 'events/index'
   get '/locations/prefecture/:id', to: "location#prefecture"
-  
+
   resources :users
-  resources :locations do
-    resources :events
-  end
+  resources :locations
+  resources :events
 end
