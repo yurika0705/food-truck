@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<div class="show">
+  <div class="show-title">出店予定詳細</div>
+  <p class="p1">
+    <%= @event.title %>
+  </p>
+
+  <p class="p2">
+    <strong>日時</strong>
+    <%= @event.start_time.strftime("%m-%d") %>
+  </p>
+
+  <div class="link-btn">
+    <%= link_to '削除', location_event_path(@event.id), method: :delete, data: { confirm: '削除しますか?' } %>
+    <%= link_to '戻る', location_events_path %>
+  </div>
+</div>

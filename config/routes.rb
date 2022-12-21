@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  get 'users/show'
   devise_for :users
   root to: 'locations#index'
-
-  get 'events/index'
   get '/locations/prefecture/:id', to: "location#prefecture"
 
   resources :users
-  resources :locations
-  resources :events
+  resources :locations do
+    resources :events
+  end
 end

@@ -1,0 +1,30 @@
+  <p id="notice"><%= notice %></p>
+
+  <div class="toppage">
+  <div class="event-location"><%= image_tag "目的地アイコン3.png", class:"location-ev-icon" %><%= @location.place %></div>
+  <%= form_with model: [@location, @event], local: true do |form| %>
+    <div class="title">
+      <div class="form-tag">出店予定のキッチンカー名を入力してください</div>
+      <%= form.text_field :title %>
+    </div>
+      <div class="time">
+      <div class="form-tag">出店日時を選択してください</div>
+      <%= form.datetime_select :start_time %>
+    </div>
+  <div class="submit">
+      <%= form.submit %>
+  </div>
+  <% end %>
+  </div>
+  <div class="col-md-8">
+  <%= month_calendar events: @events do |date, events| %>
+    <%= date.day %>
+    <% events.each do |event| %>
+      <div>
+        <%= link_to event.title, location_event_path(@location.id, event.id) %>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+  </div>
+  </div>

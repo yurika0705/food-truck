@@ -23,15 +23,9 @@
 
 
   <%# カレンダー表示 %>
-  <h1>Schedule</h1>
-  <%= month_calendar events: @calendars do |date, calendars| %>
-    <%= date.day %>
-      <% calendars.each do |calendar| %><br />
-        <%= calendar.start_time.strftime('%H:%M') %> 
-        <%= link_to calendar.store_name,calendar_path(calendar) %>
-      <% end %>
-  <% end %>
-
+  <div class="events-link">
+    <%= image_tag "eventicon.png", class:"event-icon" %><%= link_to '出店状況の確認', location_events_path(@location.id) %>
+  </div>
   <%# JavaScriptでGoogleMapを表示する %>
   <!-- 住所表示エリア -->
   <p class="this-address"><%= @location.address %></p>

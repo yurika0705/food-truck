@@ -1,3 +1,10 @@
+// トップページの画像設定
+.mainimg {
+  border-radius: 10px;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
 
 // 出店場所登録画面の設定
 #locations-new {
@@ -76,11 +83,29 @@ textarea {
   border-bottom: solid 2px;
 }
 
+.events-link {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.events-link a {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.event-icon {
+  opacity: 50%;
+  height: 25px;
+  width: 25px;
+}
+
 // google mapの設定
 #map {
   height: 300px;
   width: 400px;
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .this-address {
@@ -93,4 +118,21 @@ textarea {
   flex-flow: column;
   align-items: center;
   padding-top: 100px;
+}
+
+// トップページの画像設定
+.bg-switcher{
+    width: 100%;
+    height:1000px;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg{
+    color: white;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
 }
