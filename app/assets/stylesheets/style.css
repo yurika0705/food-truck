@@ -46,13 +46,15 @@ a:hover {
 ---------------------------------------------------------------------------*/
 /*画像ブロック*/
 #mainimg img {
-	width: 400px;
+	width: 100%;
+	height: auto;
+	animation: animationZoom2 10s ease-in-out infinite;
 	margin: 40px auto 40px;
 	border-radius: 10px;	/*角を丸くする指定。この１行を削除すれば角丸がなくなります。*/
 	margin-bottom: 40px;	/*下に空けるスペース*/
 }
 
-/*メニュー
+/* ヘッダー
 ---------------------------------------------------------------------------*/
 /*メニュー全体を囲むブロック*/
 #menubar {
@@ -62,11 +64,22 @@ a:hover {
 	display: flex;
 	justify-content: space-between;
 }
+.apptitle {
+	display: flex;
+}
 
-.title a {
+.apptitle a {
+	font-size: 25px;
+	display: flex;
 	text-decoration: none;
-  font-size: 25px;
+	text-align: center;
   padding: 15px 30px;
+	margin: 0 0 0 auto;
+}
+
+.list {
+	display: flex;
+	align-items: center;
 }
 
 .post {

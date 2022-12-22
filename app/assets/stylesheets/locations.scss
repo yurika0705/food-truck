@@ -120,15 +120,16 @@ textarea {
   padding-top: 100px;
 }
 
-// トップページの画像設定
+// トップページのmain画像設定
 .bg-switcher{
-    width: 100%;
-    height:1000px;
+    width: 100vw;
+    height:100vh;
     background-position: center center;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: aqua;
 }
 .bg{
     color: white;

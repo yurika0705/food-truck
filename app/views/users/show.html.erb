@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="subtitle"><%= @user.name %>・・・My Calender・・・</div>
+  <%# カレンダー表示 %>
+    <div class="col-md-8">
+  <%= month_calendar events: @events do |date, events| %>
+    <%= date.day %>
+    <% events.each do |event| %>
+      <div>
+        <%= link_to event.title, location_event_path(event.id) %>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+</div>

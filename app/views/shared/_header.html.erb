@@ -1,13 +1,15 @@
 <header>
       <nav id="menubar">
-        <h1 class="title"><a href="/">FOOD TRUCK</a></h1>
+        <h1 class="apptitle"><a href="/">FOOD TRUCK</a></h1>
         <% if user_signed_in? %>
+          <div class="list">
           <%= link_to "出店場所の登録", new_location_path, class: "post" %>
-          <%= link_to "マイページ", "/users/#{current_user.id}" %>
+          <%= link_to "マイページ", "/users/#{current_user.id}", class: "post" %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post" %>
         <% else %>
           <%= link_to "ログイン", new_user_session_path, class: "post" %>
           <%= link_to "新規登録", new_user_registration_path, class: "post" %>
         <% end %>
+        </div>
       </nav>
     </header>
