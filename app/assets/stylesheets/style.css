@@ -8,6 +8,7 @@
 ---------------------------------------------------------------------------*/
 body {
 	margin: 0px;
+	height: 100%;
 	padding: 0px;
 	-webkit-text-size-adjust: none;
 	color: #999;	/*全体の文字色*/
@@ -33,34 +34,74 @@ a:hover {
 	color: #b4ae99;	/*マウスオン時の文字色*/
 }
 
+
+/*背景画像の設定
+---------------------------------------------------------------------------*/
+.background {
+	background-image: url('background2.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+	border-radius: 10px;
+}
 /*コンテナー（ホームページを囲む一番外側のブロック）
 ---------------------------------------------------------------------------*/
 #container {
-	max-width: 1400px;	/*ブロックの最大幅*/
+	max-width: 80%;	
 	margin: 0 auto;
+	background-color: #fff;
 	padding: 0 3%;
+	box-sizing: border-box;
+	background: rgba(255,255,255,0.9);
+	border-radius: 10px;
 }
 
 
 /*トップページのメイン画像
 ---------------------------------------------------------------------------*/
 /*画像ブロック*/
-#mainimg img {
+.main-image {
+	background-image: url('background3.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 	width: 100%;
-	height: auto;
-	animation: animationZoom2 10s ease-in-out infinite;
-	margin: 40px auto 40px;
+	height: 600px;
+	margin: 0 auto 40px;
 	border-radius: 10px;	/*角を丸くする指定。この１行を削除すれば角丸がなくなります。*/
 	margin-bottom: 40px;	/*下に空けるスペース*/
+	opacity: 60%;
 }
+
+/*背景透過のための設定*/
+.bkRGBA {
+	height: 100%;
+	background: rgba(255,255,255,0.1);
+	align-items: center;
+}
+
+.main-text {
+	font-size: 30px;
+	color: black;
+	text-align: center;
+}
+
 
 /* ヘッダー
 ---------------------------------------------------------------------------*/
+header {
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-sizing: border-box;
+}
 /*メニュー全体を囲むブロック*/
 #menubar {
-	text-align: center;		/*文字をセンタリング*/
-	font-size: 18px;		/*文字サイズ*/
-	margin: 20px;	/*下に空けるスペース*/
+	text-align: center;
+	font-size: 18px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -72,9 +113,8 @@ a:hover {
 	font-size: 25px;
 	display: flex;
 	text-decoration: none;
-	text-align: center;
-  padding: 15px 30px;
-	margin: 0 0 0 auto;
+	align-items: center;
+	margin-left: 50px;
 }
 
 .list {
@@ -89,7 +129,7 @@ a:hover {
 /*マウスオン時の設定*/
 #menubar a:hover {
 	color: #b4ae99;	/*文字色*/
-	border-bottom: 4px solid #b4ae99;	/*下線の幅、線種、色*/
+	border-bottom: 4px solid #b4ae99;	
 }
 
 /*コンテンツ（見出しバーや文字などが入っているブロック）
@@ -138,10 +178,17 @@ footer .pr {
 .location-lists {
 	display: flex;
 	flex-flow: column wrap;
-	padding: 0px 20px;	/*上下、左右へのブロック内の余白*/
 	margin-bottom: 20px;	/*ブロックの下(外側)に空ける余白*/
+	justify-content: center;
+	box-sizing: border-box;
 }
-/*記事設定*/
+.location-list {
+	overflow-x: scroll;
+	width: 100%;
+}
+.prefecture-group {
+	width: 100%;
+}
 .place {
 	display: flex;
 	justify-content: space-between;

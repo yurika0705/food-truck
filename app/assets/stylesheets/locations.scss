@@ -35,6 +35,7 @@ textarea {
 }
 .location-list {
   display: flex;
+  overflow: auto;
 }
 .prefecture-group {
   text-align: center;
@@ -44,6 +45,7 @@ textarea {
   border-bottom: solid 2px;
 }
 .location-image-content {
+  min-width: 100px;
   width: 100px;
   align-items: center;
   margin: 10px;
@@ -66,7 +68,7 @@ textarea {
 }
 .location-show {
   width: 50%;
-  overflow: scroll;
+  overflow: auto;
 }
 .show-lists li {
   padding: 10px;
