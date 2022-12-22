@@ -5,6 +5,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= include_gon %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
@@ -13,6 +16,10 @@
   <body id="<%= controller.controller_name %>-<%= controller.action_name %>">
     <%= render 'shared/header' %>
     <%= render 'shared/toast' %>
+    <div class="background">
+    <div id="container">
     <%= yield %>
+    </div>
+    </div>
   </body>
 </html>

@@ -29,6 +29,7 @@ iframe {width: 100%;}
 a {
 	color: #999;	/*リンクテキストの色*/
 	transition: 0.3s;	/*マウスオン時の移り変わるまでの時間設定。0.3秒。*/
+	text-decoration: none;
 }
 a:hover {
 	color: #b4ae99;	/*マウスオン時の文字色*/
@@ -38,12 +39,13 @@ a:hover {
 /*背景画像の設定
 ---------------------------------------------------------------------------*/
 .background {
-	background-image: url('background2.jpg');
+	background-image: url('background6.jpeg');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 	border-radius: 10px;
+	height: 100%;
 }
 /*コンテナー（ホームページを囲む一番外側のブロック）
 ---------------------------------------------------------------------------*/
@@ -51,7 +53,7 @@ a:hover {
 	max-width: 80%;	
 	margin: 0 auto;
 	background-color: #fff;
-	padding: 0 3%;
+	padding: 20px 3%;
 	box-sizing: border-box;
 	background: rgba(255,255,255,0.9);
 	border-radius: 10px;
@@ -62,28 +64,36 @@ a:hover {
 ---------------------------------------------------------------------------*/
 /*画像ブロック*/
 .main-image {
-	background-image: url('background3.jpg');
+	background-image: url('mainimg5.jpeg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
-	height: 600px;
+	height: 100vh;
 	margin: 0 auto 40px;
 	border-radius: 10px;	/*角を丸くする指定。この１行を削除すれば角丸がなくなります。*/
 	margin-bottom: 40px;	/*下に空けるスペース*/
-	opacity: 60%;
-}
-
-/*背景透過のための設定*/
-.bkRGBA {
-	height: 100%;
-	background: rgba(255,255,255,0.1);
 	align-items: center;
 }
 
-.main-text {
-	font-size: 30px;
-	color: black;
+.bkRGBA {
+	width: 100%;
+	height: 100%;
+	align-content: center;
 	text-align: center;
+	background: rgba(255,255,255,0.1);
+}
+
+.main-text {
+	font-size: 60px;
+	font-family: 'Open Sans', sans-serif;
+	color: #fff;
+	padding-top: 200px;
+}
+
+
+.main-text2 {
+	color: #fff;
+	font-size: 20px;
 }
 
 
@@ -97,6 +107,7 @@ header {
   width: 100%;
   background: white;
   box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
 }
 /*メニュー全体を囲むブロック*/
 #menubar {
