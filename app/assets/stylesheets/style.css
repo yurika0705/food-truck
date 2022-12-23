@@ -39,13 +39,17 @@ a:hover {
 /*背景画像の設定
 ---------------------------------------------------------------------------*/
 .background {
-	background-image: url('background6.jpeg');
+	background-image: url('mainimg5.jpg');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 	border-radius: 10px;
 	height: 100%;
+}
+
+.rgba {
+	background: rgba(255,255,255,0.2);
 }
 /*コンテナー（ホームページを囲む一番外側のブロック）
 ---------------------------------------------------------------------------*/
@@ -64,7 +68,7 @@ a:hover {
 ---------------------------------------------------------------------------*/
 /*画像ブロック*/
 .main-image {
-	background-image: url('mainimg5.jpeg');
+	background-image: url('mainimg6.jpeg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -87,7 +91,7 @@ a:hover {
 	font-size: 60px;
 	font-family: 'Open Sans', sans-serif;
 	color: #fff;
-	padding-top: 200px;
+	padding-top: 500px;
 }
 
 
@@ -194,8 +198,9 @@ footer .pr {
 	box-sizing: border-box;
 }
 .location-list {
-	overflow-x: scroll;
+	overflow-x: auto;
 	width: 100%;
+	height: 200px;
 }
 .prefecture-group {
 	width: 100%;

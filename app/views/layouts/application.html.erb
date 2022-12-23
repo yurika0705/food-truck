@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= include_gon %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&family=Roboto:wght@100&display=swap" rel="stylesheet">
@@ -17,9 +18,11 @@
     <%= render 'shared/header' %>
     <%= render 'shared/toast' %>
     <div class="background">
-    <div id="container">
-    <%= yield %>
-    </div>
+      <div class="rgba">
+        <div id="container">
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
 </html>
