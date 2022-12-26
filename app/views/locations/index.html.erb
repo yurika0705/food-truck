@@ -21,55 +21,67 @@
             <div class="prefecture-group">福岡県</div>
             <div class="location-list">
             <% @location1.each do |location| %> 
-            <div class="location-image-content">
-              <%= image_tag location.image.variant(resize: '200x200'), class: 'location-image' if location.image.attached? %>
-              <%= link_to(location.place, location_path(location.id)) %>
-            </div>
+              <%= link_to location_path(location.id) do  %>
+                <div class="location-image-content">
+                  <%= image_tag location.image.variant(resize: '200x200'), class: 'location-image' if location.image.attached? %>
+                  <%= location.place %>
+                </div>
+              <% end %>
             <% end %>
             </div>
             <div class="prefecture-group">佐賀県</div>
             <div class="location-list">
             <% @location2.each do |location| %> 
-            <div class="location-image-content">
-                <%= image_tag location.image.variant(resize: '200x200'), class: 'location-image' if location.image.attached? %>
-                <%= link_to(location.place, location_path(location.id)) %>
-            </div>
+              <%= link_to location_path(location.id) do  %>
+                <div class="location-image-content">
+                  <%= image_tag location.image.variant(resize: '200x200'), class: 'location-image' if location.image.attached? %>
+                  <%= location.place %>
+                </div>
+              <% end %>
             <% end %>
             </div>
             <div class="prefecture-group">長崎県</div>
             <div class="location-list">
             <% @location3.each do |location| %> 
-            <div class="location-image-content">
-                <%= image_tag location.image.variant(resize: '200x200'), class: 'location-image' if location.image.attached? %>
-                <%= link_to(location.place, location_path(location.id)) %>
-            </div>
+              <%= link_to location_path(location.id) do  %>
+                <div class="location-image-content">
+                  <%= image_tag location.image.variant(resize: '200x200'), class: 'location-image' if location.image.attached? %>
+                  <%= location.place %>
+                </div>
+              <% end %>
             <% end %>
             </div>
             <div class="prefecture-group">熊本県</div>
             <div class="location-list">
             <% @location4.each do |location| %> 
-            <div class="location-image-content">
-                <%= image_tag location.image.variant(resize: '200x200'), class: 'location-image' if location.image.attached? %>
-                <%= link_to(location.place, location_path(location.id)) %>
-            </div>
+              <%= link_to location_path(location.id) do  %>
+                <div class="location-image-content">
+                  <%= image_tag location.image.variant(resize: '200x200'), class: 'location-image' if location.image.attached? %>
+                  <%= location.place %>
+                </div>
+              <% end %>
             <% end %>
             </div>
             <div class="prefecture-group">大分県</div>
             <div class="location-list">
             <% @location5.each do |location| %> 
-            <div class="location-image-content">
-                <%= image_tag location.image.variant(resize: '200x200'), class: 'location-image' if location.image.attached? %>
-                <%= link_to(location.place,  location_path(location.id)) %>
-            </div>
+              <%= link_to location_path(location.id) do  %>
+                <div class="location-image-content">
+                  <%= image_tag location.image.variant(resize: '200x200'), class: 'location-image' if location.image.attached? %>
+                  <%= location.place %>
+                </div>
+              <% end %>
             <% end %>
             </div>
             <div class="prefecture-group">山口県</div>
             <div class="location-list">
             <% @location6.each do |location| %> 
-            <div class="location-image-content">
-                <%= image_tag location.image.variant(resize: '200x200'), class: 'location-image' if location.image.attached? %>
-                <%= link_to(location.place, location_path(location.id)) %>
-            </div>
+              <%= link_to location_path(location.id) do  %>
+                <div class="location-image-content">
+                  <%= image_tag location.image.variant(resize: '200x200'), class: 'location-image' if location.image.attached? %>
+                  <%= location.place %>
+                </div>
+              <% end %>
             <% end %>
             </div>
           </div>

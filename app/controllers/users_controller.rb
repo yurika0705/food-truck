@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
   def show
-    @events = Event.where(user_id: @user.id)
+    @events = Event.where(user_id: current_user.id)
   end
 
   private
