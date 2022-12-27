@@ -19,11 +19,9 @@
           <div class="location-lists">
             <div class="prefecture-group">福岡県</div>
             <div class="location-list">
-            <% unless @locations.present? %>
-              <div>投稿がありません</div>
-            <% end %>
-            <% @location1.each do |location| %> 
+            <% if @locations.present? %>
             
+            <% @location1.each do |location| %> 
               <%= link_to location_path(location.id) do  %>
                 <div class="location-image-content">
                   <%= image_tag location.image.variant(resize: '200x200'), class: 'location-image' if location.image.attached? %>
@@ -87,6 +85,9 @@
               <% end %>
             <% end %>
             </div>
+            <% else %>
+              <div>投稿がありません</div>
+            <% end %>
           </div>
       </section>
     </div>
