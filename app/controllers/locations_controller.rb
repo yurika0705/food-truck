@@ -11,8 +11,6 @@ class LocationsController < ApplicationController
     @location4 = Location.where(prefecture_id: 4)
     @location5 = Location.where(prefecture_id: 5)
     @location6 = Location.where(prefecture_id: 6)
-    
-
   end
 
   def new
