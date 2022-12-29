@@ -2,6 +2,8 @@ class LocationsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   before_action :set_location, only: [:edit, :show, :update, :destroy]
   before_action :my_location, only: [:edit, :destroy]
+  before_action :authenticate_user!
+  before_action :correct_page,only: [:edit,:XXX]
 
   def index
     @locations = Location.all
@@ -63,5 +65,12 @@ private
 
   def my_location
     @location.user_id == current_user.id
+  end
+
+  def correct_page
+    @location = Location.find(params[:id])
+    unless @location.user.id == current_user.id
+      redirect_to root_path
+    end
   end
 end
