@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :correct_event
   def index
     @event = Event.new
     @location = Location.find(params[:location_id])
@@ -50,4 +52,10 @@ class EventsController < ApplicationController
     params.require(:event).permit(:title, :start_time).merge(user_id: current_user.id, location_id: params[:location_id])
   end
 
+  def correct_event
+      @event = Event.find(params[:id])
+    unless @event.user.id == current_user.id
+      redirect_to root_path
+    end
+  end
 end
