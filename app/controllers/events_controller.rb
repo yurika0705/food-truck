@@ -11,9 +11,14 @@ class EventsController < ApplicationController
   end
 
   def show
-    current_user.id == params[:id]
-      @location = Location.find(params[:location_id])
+    @location = Location.find(params[:location_id])
+    binding.pry
+    if current_user.id == params[:id]
+      
       @event = Event.find(params[:id])
+    else 
+      redirect_to root_path
+    end
   end
 
   def create

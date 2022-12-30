@@ -4,7 +4,8 @@ class User < ApplicationRecord
 
   # アソシエーション
   has_many :locations
-  has_many :events
+  has_many :event_users
+  has_many :events, through: :event_users
   # nameカラムのバリデーションを追加
   validates :name, presence: true
 end

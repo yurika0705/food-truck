@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   before_action :correct_user
   def show
+    user_events_params
     @events = Event.where(user_id: current_user.id)
+    @location = Location.find(params[:location_id])
   end
 
 
@@ -14,6 +16,6 @@ class UsersController < ApplicationController
   private
 
   def user_events_params
-    params.require(:location).permit(:place, :address, :contact_address, :fee, :info, :image, :prefecture_id, :latitude, :longitude).merge(user_id: current_user.id)
+    params.require(:events).permit(:title, :start_time).merge(location_id: params[:location_id], user_id: current_user.id)
   end
 end
