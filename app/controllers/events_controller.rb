@@ -11,7 +11,6 @@ class EventsController < ApplicationController
   end
 
   def show
-    binding.pry
     if current_user.id == params[:id]
       @location = Location.find(params[:location_id])
       @event = Event.find(params[:id])
