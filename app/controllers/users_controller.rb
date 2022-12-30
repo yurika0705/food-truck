@@ -4,7 +4,6 @@ class UsersController < ApplicationController
     @events = Event.where(user_id: current_user.id)
   end
 
-
   def correct_user
       @user = User.find(params[:id])
     unless @user.id == current_user.id
