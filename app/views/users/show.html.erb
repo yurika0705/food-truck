@@ -6,8 +6,7 @@
     <%= date.day %>
     <% events.each do |event| %>
       <div>
-        <%= event.title %>
-        <%# <%= link_to event.title, location_event_path(event.id, order_sort: 1) %>
+        <%= link_to event.title, location_event_path(event.id, order_sort: 1) %>
       </div>
     <% end %>
   <% end %>
