@@ -4,7 +4,7 @@ class Location < ApplicationRecord
   belongs_to_active_hash :prefecture
   # テーブルとのアソシエーション
   belongs_to :user
-  has_many :events
+  has_many :events, dependent: :destroy
   # アクティブストレージとのアソシエーション
   has_one_attached :image
 
