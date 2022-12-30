@@ -11,9 +11,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    if params[:id].to_i == current_user.id
-      @event = Event.find(params[:location_id])
-    else
+    binding.pry
+    if current_user.id == params[:id]
       @location = Location.find(params[:location_id])
       @event = Event.find(params[:id])
     end
@@ -32,19 +31,13 @@ class EventsController < ApplicationController
 
   def destroy
     @event = Event.find(params[:id])
-    @event.destroy
-    redirect_to location_events_path(@event.location_id), notice:"削除しました"
-  end
-
-  def update
-    @event = Event.find(params[:id])
-    if @event.update(event_parameter)
-      redirect_to location_event_path, notice: "編集しました"
-    else
-      render 'edit'
+    if user_signed_in? && (current_user == @event.user)
+      @event.destroy
+      redirect_to location_events_path(@event.location_id), notice:"削除しました" 
+    else 
+      redirect_to root_path
     end
   end
-
 
   private
 
