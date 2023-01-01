@@ -11,8 +11,14 @@ class EventsController < ApplicationController
   end
 
   def show
-    @location = Location.find(params[:location_id])
-    @event = Event.find(params[:id])
+    case params[:order_sort]
+    when "1"
+      binding.pry
+      @user = User.find(params[:id])
+    else
+      @location = Location.find(params[:location_id])
+      @event = Event.find(params[:id])
+    end
   end
 
   def create
