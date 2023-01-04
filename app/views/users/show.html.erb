@@ -6,7 +6,7 @@
     <%= date.day %>
     <% events.each do |event| %>
       <div>
-        <%= link_to event.title, location_event_path(event_id: event.id, location_id: event.location.id, order_sort: 1) %>
+        <%= link_to event.location.place.truncate(10), location_event_path(event_id: event.id, location_id: event.location.id, order_sort: 1) %>
       </div>
     <% end %>
   <% end %>

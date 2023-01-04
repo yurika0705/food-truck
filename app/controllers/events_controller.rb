@@ -39,7 +39,7 @@ class EventsController < ApplicationController
       @event.destroy
       redirect_to location_events_path(@event.location_id), notice:"削除しました" 
     else 
-      redirect_to root_path, notice:"削除できませんでした"
+      render location_events_path(@event.location_id), notice:"削除できませんでした"
     end
   end
 

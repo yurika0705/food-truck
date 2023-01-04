@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :correct_user
   def show
     @events = Event.where(user_id: current_user.id)
+    
   end
 
   def correct_user

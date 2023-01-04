@@ -21,7 +21,7 @@
     <%= date.day %>
     <% events.each do |event| %>
       <div>
-        <%= link_to event.title, location_event_path(@location.id, event.id) %>
+        <%= link_to event.title.truncate(5), location_event_path(@location.id, event.id) %>
       </div>
     <% end %>
   <% end %>
