@@ -14,7 +14,6 @@
 
 
 
-
 ## locations テーブル
 
 | Column             | Type       | Options                        |
@@ -26,19 +25,16 @@
 | info               | text       |                                |
 | image              | text       |                                |
 | user               | references | null: false, foreign_key: true |
-| comment            | references | foreign_key: true              |
 
 
-
-
-## comments テーブル
+## events テーブル
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| content            | string     | null: false                    |
+| title              | string     | null: false                    |
+| start_time         | datetime   | null: false                    |
 | user               | references | null: false, foreign_key: true |
 | location           | references | null: false, foreign_key: true |
-
 
 
 
@@ -77,7 +73,7 @@ https://food-truck.onrender.com
 
 
 実装予定の機能
-
+予約管理機能の実装
 
 データベース設計
 
