@@ -13,7 +13,8 @@ class EventsController < ApplicationController
   def show
     case params[:order_sort]
     when "1"
-      binding.pry
+      @location = Location.find(params[:location_id])
+      @event = Event.find(params[:event_id])
       @user = User.find(params[:id])
     else
       @location = Location.find(params[:location_id])
@@ -34,11 +35,11 @@ class EventsController < ApplicationController
 
   def destroy
     @event = Event.find(params[:id])
-    if user_signed_in? && (current_user == @event.user)
+    if user_signed_in? && (current_user.id == @event.user_id)
       @event.destroy
       redirect_to location_events_path(@event.location_id), notice:"削除しました" 
     else 
-      redirect_to root_path
+      redirect_to root_path, notice:"削除できませんでした"
     end
   end
 
