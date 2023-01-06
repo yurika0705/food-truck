@@ -84,11 +84,11 @@ https://food-truck.onrender.com
 
 　・Javascript
 
-　　　・・Google APIs
+　　　・Google APIs
 
-　　　　　・・・Geocoding API
+　　　　　・Geocoding API
 
-　　　　　・・・Maps Javascript API
+　　　　　・Maps Javascript API
 
 　・MySQL
 
