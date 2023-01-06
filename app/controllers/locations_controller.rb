@@ -40,21 +40,21 @@ class LocationsController < ApplicationController
       redirect_to :edit
     end
   end
-  
+
   def destroy
     @location.destroy
     redirect_to root_path
   end
 
-private
+  private
+
   def location_params
-    params.require(:location).permit(:place, :address, :contact_address, :fee, :info, :image, :prefecture_id, :latitude, :longitude).merge(user_id: current_user.id)
+    params.require(:location).permit(:place, :address, :contact_address, :fee, :info, :image, :prefecture_id, :latitude,
+                                     :longitude).merge(user_id: current_user.id)
   end
 
   def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
+    redirect_to action: :index unless user_signed_in?
   end
 
   def set_location

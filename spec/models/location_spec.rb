@@ -23,27 +23,27 @@ RSpec.describe Location, type: :model do
       it '場所名がないと登録できない' do
         @location.place = nil
         @location.valid?
-        expect(@location.errors.full_messages).to include("Placeを入力してください")
+        expect(@location.errors.full_messages).to include('Placeを入力してください')
       end
       it '県のカテゴリー選択がされていないと登録できない' do
         @location.prefecture_id = nil
         @location.valid?
-        expect(@location.errors.full_messages).to include("Prefectureを入力してください")
+        expect(@location.errors.full_messages).to include('Prefectureを入力してください')
       end
       it '住所がないと登録できない' do
         @location.address = nil
         @location.valid?
-        expect(@location.errors.full_messages).to include("Addressを入力してください")
+        expect(@location.errors.full_messages).to include('Addressを入力してください')
       end
       it '連絡先がないと登録できない' do
         @location.contact_address = nil
         @location.valid?
-        expect(@location.errors.full_messages).to include("Contact addressを入力してください")
+        expect(@location.errors.full_messages).to include('Contact addressを入力してください')
       end
       it '県に「---」が選択されている場合は登録できない' do
         @location.prefecture_id = 0
         @location.valid?
-        expect(@location.errors.full_messages).to include("Prefectureを選択してください")
+        expect(@location.errors.full_messages).to include('Prefectureを選択してください')
       end
     end
   end

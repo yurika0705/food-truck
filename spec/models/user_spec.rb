@@ -21,23 +21,23 @@ RSpec.describe User, type: :model do
       it 'nameが空では登録できない' do
         @user.name = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include "Nameを入力してください"
+        expect(@user.errors.full_messages).to include 'Nameを入力してください'
       end
       it 'emailが空では登録できない' do
         @user.email = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include "メールアドレスを入力してください"
+        expect(@user.errors.full_messages).to include 'メールアドレスを入力してください'
       end
       it 'パスワードが空では登録できない' do
         @user.password = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include "パスワードを入力してください"
+        expect(@user.errors.full_messages).to include 'パスワードを入力してください'
       end
       it '確認用パスワードが同じでなければ登録できない' do
         @user.password = 'aaa111'
         @user.password_confirmation = 'aaa222'
         @user.valid?
-        expect(@user.errors.full_messages).to include "パスワード（確認用）とパスワードの入力が一致しません"
+        expect(@user.errors.full_messages).to include 'パスワード（確認用）とパスワードの入力が一致しません'
       end
       it '重複したemailが存在する場合は登録できない' do
         @user.save
