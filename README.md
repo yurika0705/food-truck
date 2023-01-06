@@ -103,7 +103,7 @@ https://food-truck.onrender.com
 # 主なGem (ライブラリ)
 　・devise(ユーザー管理機能)
 
- ・simple_calendar(カレンダー作成)
+　・simple_calendar(カレンダー作成)
 
 　・active_hash(カテゴリ選択)
 
