@@ -40,6 +40,8 @@
 # アプリケーション概要
 キッチンカーのオーナーをターゲットにした出店可能な場所の共有とスケジュール管理ができるアプリです。
 
+紹介資料・・・https://docs.google.com/document/d/1Y1YN-0f5Elj-_rML7QL7L3mEK9gYSC3TiTwTRjABGsc/edit?usp=sharing
+
 # URL
 https://food-truck.onrender.com
 
@@ -62,6 +64,7 @@ https://food-truck.onrender.com
 　・マイページで自身の予定一覧表示
 
 # 作成背景
+
 昨年、友人とキッチンカーの運営をしていた際に出店可能な場所を一から電話で探す必要がありとても時間がかかりました。また貸し出し側のダブルブッキングなどで出店ができなくなる事態も発生し、非常に困った事もありました。
 そこで、地域のキッチンカーの出店場所と場所ごとの出店予定がオーナー同士で共有できるアプリケーションを開発することでこのような手間やミスが減るのではと考え、このアプリを作成しました。
 
@@ -70,6 +73,10 @@ https://food-truck.onrender.com
 
 　・予約管理機能の実装
 
+# データベース設計
+
+[![Image from Gyazo](https://i.gyazo.com/78cc9043cc9518d5ef7a08924c6ca823.png)](https://gyazo.com/78cc9043cc9518d5ef7a08924c6ca823)
+
 # 開発環境
 　・Ruby(2.6.5)
 
@@ -77,11 +84,11 @@ https://food-truck.onrender.com
 
 　・Javascript
 
-　　　・Google APIs
+　　　・・Google APIs
 
-　　　　　・Geocoding API
+　　　　　・・・Geocoding API
 
-　　　　　・Maps Javascript API
+　　　　　・・・Maps Javascript API
 
 　・MySQL
 
@@ -125,3 +132,4 @@ https://food-truck.onrender.com
 　・投稿された場所が都道府県ごとにまとまって表示されるように振り分けた。
 
 　・TOPページの背景の透かしが上の文字にまで適用されないように間にブロックを作った。(CSS)
+
