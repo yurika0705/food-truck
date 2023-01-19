@@ -70,6 +70,7 @@ a:hover {
 	align-content: center;
 	text-align: center;
 	background: rgba(255,255,255,0.1);
+	background-repeat: repeat;
 }
 
 .main-text {
