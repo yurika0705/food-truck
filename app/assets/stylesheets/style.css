@@ -36,6 +36,23 @@ a:hover {
 }
 
 
+/*背景画像の設定
+---------------------------------------------------------------------------*/
+.background {
+	background-image: url('mainimg5.jpg');
+	background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  
+	border-radius: 10px;
+	height: 100vh;
+}
+
+.rgba {
+	background: rgba(255,255,255,0.2);
+	background-repeat: repeat;
+}
 /*コンテナー（ホームページを囲む一番外側のブロック）
 ---------------------------------------------------------------------------*/
 #container {
@@ -238,21 +255,4 @@ body {
 ---------------------------------------------------------------------------*/
 .ws,.wl {width: 94%;}
 
-}
-
-/*背景画像の設定
----------------------------------------------------------------------------*/
-.background {
-	background-image: url('mainimg5.jpg');
-	background-repeat: repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-	border-radius: 10px;
-	height: 100vh;
-}
-
-.rgba {
-	background: rgba(255,255,255,0.2);
-	background-repeat: repeat;
 }
