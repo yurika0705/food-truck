@@ -40,7 +40,6 @@ a:hover {
 ---------------------------------------------------------------------------*/
 .background {
 	background-image: url('mainimg5.jpg');
-	background-repeat: repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
