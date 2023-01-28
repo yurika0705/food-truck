@@ -24,6 +24,7 @@ img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
 table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
 iframe {width: 100%;}
 
+
 /*リンク（全般）設定
 ---------------------------------------------------------------------------*/
 a {
@@ -72,7 +73,7 @@ a:hover {
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	margin: 0 auto 40px;
 	border-radius: 10px;	/*角を丸くする指定。この１行を削除すれば角丸がなくなります。*/
 	margin-bottom: 40px;	/*下に空けるスペース*/
@@ -239,6 +240,11 @@ body {
 
 /*メニュー
 ---------------------------------------------------------------------------*/
+/*メニューバーの設定*/
+#menubar {
+	height: 15vh;
+}
+
 /*メニュー１個あたりの設定*/
 #menubar li {
 	display: block;	/*縦並びにする設定*/
