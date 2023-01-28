@@ -69,7 +69,6 @@ a:hover {
 ---------------------------------------------------------------------------*/
 /*画像ブロック*/
 .main-image {
-	position: relative;
 	background-image: url('mainimg6.jpeg');
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -90,28 +89,16 @@ a:hover {
 }
 
 .main-text {
-	position: absolute;
 	font-size: 60px;
 	font-family: 'Open Sans', sans-serif;
 	color: #fff;
 	padding-top: 500px;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
 }
 
 
 .main-text2 {
-	position: absolute;
 	color: #fff;
 	font-size: 20px;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
 }
 
 
