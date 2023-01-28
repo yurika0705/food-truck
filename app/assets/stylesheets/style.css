@@ -69,11 +69,12 @@ a:hover {
 ---------------------------------------------------------------------------*/
 /*画像ブロック*/
 .main-image {
+	position: relative;
 	background-image: url('mainimg6.jpeg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
-	height: 100%;
+	height: 200px;
 	margin: 0 auto 40px;
 	border-radius: 10px;	/*角を丸くする指定。この１行を削除すれば角丸がなくなります。*/
 	margin-bottom: 40px;	/*下に空けるスペース*/
@@ -81,19 +82,20 @@ a:hover {
 }
 
 .bkRGBA {
-	position: relative;
+	position: absolute;
 	width: 100%;
 	height: 100%;
 	align-content: center;
 	text-align: center;
 	background: rgba(255,255,255,0.1);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 
 .main-text {
-	position: absolute;
-	width: 80%;
-	box-sizing: border-box;
-	bottom: 40px;
 	font-size: 60px;
 	font-family: 'Open Sans', sans-serif;
 	color: #fff;
@@ -102,9 +104,6 @@ a:hover {
 
 
 .main-text2 {
-	position: absolute;
-	box-sizing: border-box;
-	bottom: 10px;
 	color: #fff;
 	font-size: 20px;
 }
@@ -254,9 +253,8 @@ font-size: 20px;
 /*メニュー
 ---------------------------------------------------------------------------*/
 /*メニューバーの設定*/
-#menubar {
+header {
 	height: 100px;
-	font-size: 12px;
 }
 /*メニュー１個あたりの設定*/
 #menubar li {
