@@ -74,7 +74,7 @@ a:hover {
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
-	height: 200px;
+	height: 100%;
 	margin: 0 auto 40px;
 	border-radius: 10px;	/*角を丸くする指定。この１行を削除すれば角丸がなくなります。*/
 	margin-bottom: 40px;	/*下に空けるスペース*/
@@ -82,12 +82,19 @@ a:hover {
 }
 
 .bkRGBA {
-	position: absolute;
 	width: 100%;
 	height: 100%;
 	align-content: center;
 	text-align: center;
 	background: rgba(255,255,255,0.1);
+}
+
+.main-text {
+	position: absolute;
+	font-size: 60px;
+	font-family: 'Open Sans', sans-serif;
+	color: #fff;
+	padding-top: 500px;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -95,17 +102,16 @@ a:hover {
 	margin: auto;
 }
 
-.main-text {
-	font-size: 60px;
-	font-family: 'Open Sans', sans-serif;
-	color: #fff;
-	padding-top: 500px;
-}
-
 
 .main-text2 {
+	position: absolute;
 	color: #fff;
 	font-size: 20px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 
 
